@@ -6,13 +6,13 @@ final result: passed
 
 The user explicitly clarified that the first mockup was rough, requested a substantial improvement without black dividers, English throughout, real cursor response, and rising bubbles across the page. The new screenshot guides the light composition, two-line title, fish Y, blue download button, underwater hero and three fish cards. This is a redesign, not a pixel-exact clone.
 
-Source: `/Users/nico/Desktop/Bildschirmfoto 2026-10-11 um 15.22.21.png` (714 × 960 px).
-Headline detail reference: `/var/folders/tx/3qh5s_rj27j236826x2ztj440000gn/T/TemporaryItems/NSIRD_screencaptureui_fSftav/Bildschirmfoto 2026-10-11 um 15.00.02.png`.
+Source: `Bildschirmfoto 2026-10-11 um 15.22.21.png` (714 × 960 px).
+Headline detail reference: `Bildschirmfoto 2026-10-11 um 15.00.02.png`.
 Implementation: `http://127.0.0.1:4174/`.
-Final comparison capture: `/Users/nico/Documents/Codex/2026-10-11/bi/work/redesign-comparison-render.png` (698 × 2486 px; CSS viewport 713 × 960; scrollbar excluded by browser capture).
-Combined source/render input: `/Users/nico/Documents/Codex/2026-10-11/bi/work/redesign-comparison.png`. Viewed together at native density. The combined image contains the complete reference and the top 1350 px of the implementation; the complete implementation was separately reviewed.
-User-facing desktop capture: `/Users/nico/Documents/Codex/2026-10-11/bi/outputs/vorschau.png` (1280 × 1000 CSS viewport).
-Mobile reviewed at 390 × 844 CSS px; capture `/Users/nico/Documents/Codex/2026-10-11/bi/work/redesign-mobile.png`.
+Final comparison capture: `redesign-comparison-render.png` (698 × 2486 px; CSS viewport 713 × 960; scrollbar excluded by browser capture).
+Combined source/render input: `redesign-comparison.png`. Viewed together at native density. The combined image contains the complete reference and the top 1350 px of the implementation; the complete implementation was separately reviewed.
+User-facing desktop capture: `vorschau.png` (1280 × 1000 CSS viewport).
+Mobile reviewed at 390 × 844 CSS px; capture `redesign-mobile.png`.
 
 ## Required fidelity surfaces
 
@@ -53,11 +53,11 @@ final result: passed
 
 User-authorized changes: stronger English storytelling, independent fish behaviour, a better upper-left brand and narrower lateral margins.
 
-Before source screenshot: `/Users/nico/Documents/Codex/2026-10-11/bi/work/redesign-comparison-render.png` (698 × 2486).
-After implementation screenshot: `/Users/nico/Documents/Codex/2026-10-11/bi/work/independent-final.png` (698 × 2515).
-Both use a 713 × 960 CSS viewport, native density and scrollbar-excluded capture. Combined comparison: `/Users/nico/Documents/Codex/2026-10-11/bi/work/independent-comparison.png`; both images viewed together, top 1300 px included. Complete page and focused mobile/header/canvas states reviewed separately.
-Mobile screenshot: `/Users/nico/Documents/Codex/2026-10-11/bi/work/independent-mobile.png` at 390 × 844.
-User-facing final capture: `/Users/nico/Documents/Codex/2026-10-11/bi/outputs/vorschau.png` at 1440 × 1180.
+Before source screenshot: `redesign-comparison-render.png` (698 × 2486).
+After implementation screenshot: `independent-final.png` (698 × 2515).
+Both use a 713 × 960 CSS viewport, native density and scrollbar-excluded capture. Combined comparison: `independent-comparison.png`; both images viewed together, top 1300 px included. Complete page and focused mobile/header/canvas states reviewed separately.
+Mobile screenshot: `independent-mobile.png` at 390 × 844.
+User-facing final capture: `vorschau.png` at 1440 × 1180.
 
 Fidelity surfaces: rounded type and the fish Y retained; copy rewritten around the residents' behaviour; new raster clownfish brand mark and tagline; wide aquarium/section layout with the same pale/blue palette; existing real image assets retained, scaled consistently. Supporting text, mobile controls and image loading checked. Intentional differences follow the user's requested improvements.
 
@@ -78,7 +78,7 @@ Creator links verified from the portfolio site: https://nicot-111.github.io/ red
 
 Browser QA at desktop and narrow mobile viewport: canvas is present, all images load, no horizontal overflow, main copy and both footer links render. Pointer drag changes the aquarium transform, underlying reef position, and foreground position independently. Keyboard movement continues working; Pause/Play was verified. Browser console had no warning/error entries. Production build and all seven available project tests passed. Final viewport restored to the production preview at 1440 × 1180. The production preview remains running at http://127.0.0.1:4174/.
 
-Final visible screenshot: `/Users/nico/Documents/Codex/2026-10-11/bi/outputs/vorschau.png`.
+Final visible screenshot: `vorschau.png`.
 
 
 ## Latest refinement: flat aquarium, stable fish notes and a clearer footer
