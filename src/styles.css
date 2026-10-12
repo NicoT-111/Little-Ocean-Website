@@ -159,3 +159,74 @@ body{background:#fff;color:#182631;font-family:-apple-system,BlinkMacSystemFont,
 .modal{border:1px solid #e6edf1;border-radius:18px;box-shadow:0 16px 48px #19384a24}
 .modal-backdrop{background:#1d33433d;backdrop-filter:blur(5px)}
 @media(max-width:520px){.hero-description{font-size:13px}.download{min-height:44px;padding:0 16px;gap:10px}.feature-bubbles .bubble span{font-size:12px}}
+
+
+/* Give the quiet layout a little life without turning it into a motion demo. */
+body{background:radial-gradient(ellipse at 50% 5%,#f1f8fc 0,transparent 42%),#fff}
+.hero-copy>.eyebrow{color:#547b91}
+.hero h1{animation:headline-arrive .7s cubic-bezier(.2,.7,.2,1) both}
+.hero-description{color:#566d7d}
+.download{box-shadow:0 4px 12px #164f781b,0 1px 2px #163f5a18}
+.download:hover{box-shadow:0 7px 17px #164f7827,0 1px 2px #163f5a18}
+.download svg{width:18px;height:18px;padding-left:7px;border-left:1px solid #ffffff6b;transition:transform .2s ease}
+.download:hover svg{transform:translateY(2px)}
+.ocean-stage{perspective:1100px}
+.aquarium{transition:box-shadow .35s ease,filter .35s ease}
+.aquarium:hover{box-shadow:0 22px 50px #246d9130,0 3px 7px #254a6115}
+.live-status{background:#0a52676b;box-shadow:inset 0 1px #ffffff3c,0 3px 12px #092c3c28}
+.interaction-status{background:#123c4fc4;box-shadow:inset 0 1px #ffffff35,0 4px 14px #092c3c24}
+.hero-goldfish{animation:fish-drift-a 6.8s ease-in-out infinite}
+.hero-clown{animation:fish-drift-b 7.5s ease-in-out -2s infinite}
+.hero-angel{animation:fish-drift-c 8.2s ease-in-out -4.1s infinite}
+.scene-picker{background:#f1f5f6;border:1px solid #e8eef0;padding:4px}
+.scene-picker button{transition:background .24s,color .24s,transform .24s}
+.scene-picker button:hover{color:#286f95;transform:translateY(-1px)}
+.scene-picker button[aria-pressed=true]{background:#fff;color:#176fa8;box-shadow:0 2px 8px #234c6017}
+.pause{transition:color .2s}
+.story{position:relative;overflow:hidden;background:linear-gradient(125deg,#f5f9fa,#f8fbfc 55%,#f0f7fa);border-color:#e7eef0;box-shadow:0 10px 30px #31576d0a}
+.story:before{content:"";position:absolute;inset:0 auto 0 0;width:3px;border-radius:0 3px 3px 0;background:linear-gradient(#a4d6e5,#78afd0 52%,#c5e6e5);opacity:.75}
+.story h2{color:#203444}
+.story-note{color:#678294}
+.resident{position:relative;overflow:hidden;background:linear-gradient(150deg,#fff 20%,#fbfdfe);border-color:#e9eff1;box-shadow:0 5px 22px #294c600c,0 1px 3px #294c6008;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s}
+.resident:after{content:"";position:absolute;z-index:0;top:0;left:18px;right:18px;height:2px;border-radius:0 0 3px 3px;background:linear-gradient(90deg,transparent,#b4dce9,transparent);opacity:.7}
+.resident:hover{transform:translateY(-4px);border-color:#dce9ed;box-shadow:0 13px 30px #294c6014,0 2px 5px #294c6009}
+.resident-copy{position:relative;z-index:1}
+.resident-copy .eyebrow{color:#608297}
+.resident h3{color:#263b49}
+.resident p{color:#627788}
+.fish-portrait{background:#dceff0}
+.portrait-reef{filter:saturate(.9) brightness(1.04);transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .8s}
+.fish-portrait .fish{filter:drop-shadow(0 3px 4px #183a5238);transition:transform .45s cubic-bezier(.2,.7,.2,1),filter .45s}
+.resident-grid .resident:nth-child(1) .fish-portrait .fish{animation:resident-drift-one 6.1s ease-in-out infinite}
+.resident-grid .resident:nth-child(2) .fish-portrait .fish{animation:resident-drift-two 7.3s ease-in-out -2.6s infinite}
+.resident-grid .resident:nth-child(3) .fish-portrait .fish{animation:resident-drift-three 5.7s ease-in-out -1.8s infinite}
+.resident:hover .fish-portrait .fish{filter:drop-shadow(0 5px 6px #183a5250)}
+.resident:hover .portrait-reef{transform:scale(1.035);filter:saturate(1) brightness(1.06)}
+.resident-more{transition:background .2s,border-color .2s,color .2s,transform .2s}
+.resident-more:hover{transform:translateX(2px)}
+.resident-detail-panel{background:linear-gradient(145deg,#fffefaf7,#f5fafbf2 74%,#edf7f7ef);border-color:#dcebed;box-shadow:0 14px 32px #1c4c6b24,inset 0 1px #fff}
+.feature-bubbles .bubble{animation:bubble-bob 6.8s ease-in-out infinite}
+.feature-bubbles>div:nth-child(2) .bubble{animation-delay:-2.2s}
+.feature-bubbles>div:nth-child(3) .bubble{animation-delay:-4.1s}
+.feature-bubbles .bubble img{opacity:.86;filter:drop-shadow(0 8px 14px #5b849014);transition:transform .45s ease,filter .45s ease}
+.feature-bubbles>div:hover .bubble img{transform:scale(1.035);filter:drop-shadow(0 11px 16px #5b84901f)}
+.feature-bubbles .bubble span{transition:transform .3s ease}
+.feature-bubbles>div:hover .bubble span{transform:translateY(-2px)}
+.feature-bubbles h3{color:#334b59}
+.feature-bubbles p{color:#657b88}
+.closing{background:linear-gradient(120deg,#eef6f8,#f5f8fb 52%,#edf5f7);border-color:#e3ecee;box-shadow:0 12px 36px #31576d0a}
+.closing .eyebrow{color:#56788a}
+.closing-fish{animation:closing-swim 8.4s ease-in-out infinite}
+.footer-compact{border-color:#e9eff0}
+.footer-brand,.footer-links a,.footer-links button,.footer-legal button{transition:color .2s ease}
+@keyframes headline-arrive{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fish-drift-a{0%,100%{transform:translate3d(0,0,0) rotate(-1deg)}50%{transform:translate3d(-4px,-7px,0) rotate(1deg)}}
+@keyframes fish-drift-b{0%,100%{transform:translate3d(0,0,0) rotate(-21deg)}50%{transform:translate3d(5px,-5px,0) rotate(-18deg)}}
+@keyframes fish-drift-c{0%,100%{transform:translate3d(0,0,0) rotate(8deg)}50%{transform:translate3d(-5px,-6px,0) rotate(5deg)}}
+@keyframes resident-drift-one{0%,100%{transform:translateX(-2px) rotate(-1deg)}50%{transform:translateX(3px) rotate(1deg)}}
+@keyframes resident-drift-two{0%,100%{transform:translateX(2px) rotate(1deg)}50%{transform:translateX(-3px) rotate(-1deg)}}
+@keyframes resident-drift-three{0%,100%{transform:translateX(-3px) rotate(1deg)}50%{transform:translateX(2px) rotate(-1deg)}}
+@keyframes bubble-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes closing-swim{0%,100%{translate:0 0;rotate:-28deg}50%{translate:7px -6px;rotate:-26deg}}
+@media(max-width:760px){.resident:hover{transform:translateY(-2px)}.feature-bubbles>div:hover .bubble img{transform:none}}
+@media(prefers-reduced-motion:reduce){.hero h1,.hero-goldfish,.hero-clown,.hero-angel,.resident-grid .resident .fish-portrait .fish,.feature-bubbles .bubble,.closing-fish{animation:none!important}.feature-bubbles .bubble img,.feature-bubbles .bubble span,.download svg{transition:none}}
