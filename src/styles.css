@@ -126,3 +126,36 @@ html,body{overflow-x:clip}
 .modal-contact span{font-size:15px}
 .modal .download{margin-top:17px}
 @media(max-width:520px){.modal-backdrop{padding:14px}.modal{padding:27px 23px;border-radius:25px;max-height:88vh}.modal h2{font-size:23px}.modal-copy p{font-size:12px;line-height:1.62}.modal-contact{font-size:11px}}
+
+
+/* A calmer, more personal finish: clear type, simple controls and quiet surfaces. */
+body{background:#fff;color:#182631;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.hero h1,.story h2,.section-heading h2,.resident h3,.closing h2,.modal h2,.bubble span{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:-.035em}
+.blue,.brand-name b,.footer-brand b{color:#176fa8}
+.eyebrow,.hero-copy>.eyebrow{font-size:9px;letter-spacing:1.25px;color:#6e8291}
+.hero-description{max-width:620px;margin:0 auto;color:#596d7c;font-size:16px;line-height:1.65;letter-spacing:0}
+.download{min-height:44px;padding:0 17px;gap:11px;border:1px solid #176596;border-radius:8px;background:#176fa8;color:#fff;box-shadow:none;font-size:13px;font-weight:600;letter-spacing:0;transition:background .16s,border-color .16s}
+.download:hover{background:#125b89;border-color:#125b89;transform:none;box-shadow:none}
+.download:active{background:#104d73;transform:translateY(1px)}
+.download span{display:inline-flex;align-items:center;justify-content:center;width:auto;height:auto;border:0;border-radius:0;background:transparent;font-size:17px;transition:none}
+.download:hover span{transform:none}
+.download-note{margin-top:9px;color:#728594;font-size:11px}
+.topbar nav button{border:0;border-radius:4px;background:transparent;color:#176fa8;padding:8px 0;font-size:12px;font-weight:600}
+.topbar nav button:hover{color:#104d73;background:transparent}
+.story{background:#f4f8fa;border:1px solid #e5edf1;border-radius:18px;box-shadow:none}
+.story .eyebrow{padding:0;background:transparent;box-shadow:none;color:#6e8291}
+.story p,.resident p,.feature-bubbles p{color:#586d7b}
+.resident{border:1px solid #e8eef1;box-shadow:0 2px 9px #19384a08;transition:border-color .2s,box-shadow .2s}
+.resident:hover{transform:none;border-color:#d5e1e8;box-shadow:0 4px 14px #19384a0c}
+.feature-bubbles .bubble{animation:none}
+.feature-bubbles .bubble img{opacity:.72}
+.feature-bubbles .bubble span{font-size:15px;color:#243846}
+.feature-bubbles .bubble b{font-size:21px}
+.feature-bubbles h3{font-size:14px;letter-spacing:0}
+.closing{background:#f4f8fa;border:1px solid #e7edf0;border-radius:20px}
+.resident-more{border:0;border-radius:4px;background:transparent;padding:7px 0;color:#176fa8;font-weight:600}
+.resident-more:hover{background:transparent;border-color:transparent;color:#104d73}
+.resident-detail-panel{border-radius:14px;box-shadow:0 7px 20px -10px #1a47602e;background:#fff;backdrop-filter:blur(8px)}
+.modal{border:1px solid #e6edf1;border-radius:18px;box-shadow:0 16px 48px #19384a24}
+.modal-backdrop{background:#1d33433d;backdrop-filter:blur(5px)}
+@media(max-width:520px){.hero-description{font-size:13px}.download{min-height:44px;padding:0 16px;gap:10px}.feature-bubbles .bubble span{font-size:12px}}
