@@ -127,8 +127,7 @@ html,body{overflow-x:clip}
 .modal .download{margin-top:17px}
 @media(max-width:520px){.modal-backdrop{padding:14px}.modal{padding:27px 23px;border-radius:25px;max-height:88vh}.modal h2{font-size:23px}.modal-copy p{font-size:12px;line-height:1.62}.modal-contact{font-size:11px}}
 
-
-/* A calmer, more personal finish: clear type, simple controls and quiet surfaces. */
+/* Keep the interface quiet and let the aquarium carry the colour. */
 body{background:#fff;color:#182631;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 .hero h1,.story h2,.section-heading h2,.resident h3,.closing h2,.modal h2,.bubble span{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:-.035em}
 .blue,.brand-name b,.footer-brand b{color:#176fa8}
@@ -137,8 +136,7 @@ body{background:#fff;color:#182631;font-family:-apple-system,BlinkMacSystemFont,
 .download{min-height:44px;padding:0 17px;gap:11px;border:1px solid #176596;border-radius:8px;background:#176fa8;color:#fff;box-shadow:none;font-size:13px;font-weight:600;letter-spacing:0;transition:background .16s,border-color .16s}
 .download:hover{background:#125b89;border-color:#125b89;transform:none;box-shadow:none}
 .download:active{background:#104d73;transform:translateY(1px)}
-.download span{display:inline-flex;align-items:center;justify-content:center;width:auto;height:auto;border:0;border-radius:0;background:transparent;font-size:17px;transition:none}
-.download:hover span{transform:none}
+.download svg{width:17px;height:17px;flex:none}
 .download-note{margin-top:9px;color:#728594;font-size:11px}
 .topbar nav button{border:0;border-radius:4px;background:transparent;color:#176fa8;padding:8px 0;font-size:12px;font-weight:600}
 .topbar nav button:hover{color:#104d73;background:transparent}
@@ -147,86 +145,466 @@ body{background:#fff;color:#182631;font-family:-apple-system,BlinkMacSystemFont,
 .story p,.resident p,.feature-bubbles p{color:#586d7b}
 .resident{border:1px solid #e8eef1;box-shadow:0 2px 9px #19384a08;transition:border-color .2s,box-shadow .2s}
 .resident:hover{transform:none;border-color:#d5e1e8;box-shadow:0 4px 14px #19384a0c}
+.fish-portrait{border-radius:13px}
+.feature-bubbles{gap:32px}
 .feature-bubbles .bubble{animation:none}
 .feature-bubbles .bubble img{opacity:.72}
 .feature-bubbles .bubble span{font-size:15px;color:#243846}
 .feature-bubbles .bubble b{font-size:21px}
 .feature-bubbles h3{font-size:14px;letter-spacing:0}
 .closing{background:#f4f8fa;border:1px solid #e7edf0;border-radius:20px}
+.closing-fish{opacity:.84}
+.footer-compact{border-color:#e7edf0}
+.footer-links a:hover,.footer-links button:hover,.footer-legal button:hover{color:#176fa8}
 .resident-more{border:0;border-radius:4px;background:transparent;padding:7px 0;color:#176fa8;font-weight:600}
 .resident-more:hover{background:transparent;border-color:transparent;color:#104d73}
+.resident-more span{font-size:13px}
 .resident-detail-panel{border-radius:14px;box-shadow:0 7px 20px -10px #1a47602e;background:#fff;backdrop-filter:blur(8px)}
+.resident-detail-panel .detail-fish{filter:drop-shadow(0 2px 2px #183a5218)}
 .modal{border:1px solid #e6edf1;border-radius:18px;box-shadow:0 16px 48px #19384a24}
 .modal-backdrop{background:#1d33433d;backdrop-filter:blur(5px)}
 @media(max-width:520px){.hero-description{font-size:13px}.download{min-height:44px;padding:0 16px;gap:10px}.feature-bubbles .bubble span{font-size:12px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal,.ambient-bubbles img,.hero .fish,.closing-fish,.resident-detail-panel{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 
+/* Plain controls and gentle movement. */
+body{background:#fbfdff}
+.hero-copy>.eyebrow{color:#64768b}
+.hero h1{animation:none}
+.hero-description{color:#596d7c}
+.download{min-height:44px;padding:0 17px;gap:10px;border:1px solid #176fa8;border-radius:7px;background:#176fa8;color:#fff;box-shadow:none;font-size:13px;font-weight:600;letter-spacing:0;transition:background .15s,border-color .15s}
+.download:hover{background:#125d8b;border-color:#125d8b;transform:none;box-shadow:none}
+.download svg{width:17px;height:17px;padding:0;border:0;transition:none}
+.download:hover svg{transform:none}
+.topbar nav button{border:0;border-radius:4px;background:transparent;color:#176fa8;padding:8px 0;font-size:12px;font-weight:600}
+.topbar nav button:hover{color:#104d73;background:transparent}
+.scene-picker{background:transparent;border:0;border-bottom:1px solid #e4eaee;border-radius:0;padding:0 0 3px}
+.scene-picker button{border-radius:3px;padding:8px 11px;transition:color .15s,background .15s}
+.scene-picker button:hover{color:#176fa8;background:#f2f7f9;transform:none}
+.scene-picker button[aria-pressed=true]{background:transparent;color:#176fa8;box-shadow:inset 0 -2px #176fa8}
+.story{background:#f5f8fa;border:1px solid #e7edf0;border-radius:16px;box-shadow:none}
+.story:before{display:none}
+.story .eyebrow{background:none;box-shadow:none;padding:0}
+.resident{background:#fff;border-color:#e8eef1;box-shadow:0 2px 10px #19384a0a;transition:border-color .18s,box-shadow .18s}
+.resident:after{display:none}
+.resident:hover{transform:translateY(-2px);border-color:#d9e5e9;box-shadow:0 6px 18px #19384a10}
+.fish-portrait .fish{transition:filter .2s}
+.resident-grid .resident:nth-child(1) .fish-portrait .fish{animation:resident-drift-one 7s ease-in-out infinite}
+.resident-grid .resident:nth-child(2) .fish-portrait .fish{animation:resident-drift-two 8s ease-in-out -2.5s infinite}
+.resident-grid .resident:nth-child(3) .fish-portrait .fish{animation:resident-drift-three 6.5s ease-in-out -1.8s infinite}
+.feature-bubbles .bubble{animation:none}
+.feature-bubbles .bubble img{opacity:.8;filter:none}
+.feature-bubbles>div:hover .bubble img,.feature-bubbles>div:hover .bubble span{transform:none;filter:none}
+.closing{background:#f5f8fa;border:1px solid #e7edf0;border-radius:18px;box-shadow:none}
+.closing-fish{animation:none}
+.resident-detail-panel{background:#fff;border-color:#e2eaee;box-shadow:0 8px 24px #1c4c6b1f;backdrop-filter:blur(6px)}
+.resident-detail-panel .eyebrow{letter-spacing:1px}
+.resident-detail-panel .detail-back{background:transparent;border:0;padding:5px 0;color:#176fa8}
+@media(prefers-reduced-motion:reduce){.resident-grid .resident .fish-portrait .fish{animation:none!important}}
 
-/* Give the quiet layout a little life without turning it into a motion demo. */
-body{background:radial-gradient(ellipse at 50% 5%,#f1f8fc 0,transparent 42%),#fff}
-.hero-copy>.eyebrow{color:#547b91}
-.hero h1{animation:headline-arrive .7s cubic-bezier(.2,.7,.2,1) both}
-.hero-description{color:#566d7d}
-.download{box-shadow:0 4px 12px #164f781b,0 1px 2px #163f5a18}
-.download:hover{box-shadow:0 7px 17px #164f7827,0 1px 2px #163f5a18}
-.download svg{width:18px;height:18px;padding-left:7px;border-left:1px solid #ffffff6b;transition:transform .2s ease}
-.download:hover svg{transform:translateY(2px)}
-.ocean-stage{perspective:1100px}
-.aquarium{transition:box-shadow .35s ease,filter .35s ease}
-.aquarium:hover{box-shadow:0 22px 50px #246d9130,0 3px 7px #254a6115}
-.live-status{background:#0a52676b;box-shadow:inset 0 1px #ffffff3c,0 3px 12px #092c3c28}
-.interaction-status{background:#123c4fc4;box-shadow:inset 0 1px #ffffff35,0 4px 14px #092c3c24}
-.hero-goldfish{animation:fish-drift-a 6.8s ease-in-out infinite}
-.hero-clown{animation:fish-drift-b 7.5s ease-in-out -2s infinite}
-.hero-angel{animation:fish-drift-c 8.2s ease-in-out -4.1s infinite}
-.scene-picker{background:#f1f5f6;border:1px solid #e8eef0;padding:4px}
-.scene-picker button{transition:background .24s,color .24s,transform .24s}
-.scene-picker button:hover{color:#286f95;transform:translateY(-1px)}
-.scene-picker button[aria-pressed=true]{background:#fff;color:#176fa8;box-shadow:0 2px 8px #234c6017}
-.pause{transition:color .2s}
-.story{position:relative;overflow:hidden;background:linear-gradient(125deg,#f5f9fa,#f8fbfc 55%,#f0f7fa);border-color:#e7eef0;box-shadow:0 10px 30px #31576d0a}
-.story:before{content:"";position:absolute;inset:0 auto 0 0;width:3px;border-radius:0 3px 3px 0;background:linear-gradient(#a4d6e5,#78afd0 52%,#c5e6e5);opacity:.75}
-.story h2{color:#203444}
-.story-note{color:#678294}
-.resident{position:relative;overflow:hidden;background:linear-gradient(150deg,#fff 20%,#fbfdfe);border-color:#e9eff1;box-shadow:0 5px 22px #294c600c,0 1px 3px #294c6008;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s}
-.resident:after{content:"";position:absolute;z-index:0;top:0;left:18px;right:18px;height:2px;border-radius:0 0 3px 3px;background:linear-gradient(90deg,transparent,#b4dce9,transparent);opacity:.7}
-.resident:hover{transform:translateY(-4px);border-color:#dce9ed;box-shadow:0 13px 30px #294c6014,0 2px 5px #294c6009}
-.resident-copy{position:relative;z-index:1}
-.resident-copy .eyebrow{color:#608297}
-.resident h3{color:#263b49}
-.resident p{color:#627788}
-.fish-portrait{background:#dceff0}
-.portrait-reef{filter:saturate(.9) brightness(1.04);transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .8s}
-.fish-portrait .fish{filter:drop-shadow(0 3px 4px #183a5238);transition:transform .45s cubic-bezier(.2,.7,.2,1),filter .45s}
-.resident-grid .resident:nth-child(1) .fish-portrait .fish{animation:resident-drift-one 6.1s ease-in-out infinite}
-.resident-grid .resident:nth-child(2) .fish-portrait .fish{animation:resident-drift-two 7.3s ease-in-out -2.6s infinite}
-.resident-grid .resident:nth-child(3) .fish-portrait .fish{animation:resident-drift-three 5.7s ease-in-out -1.8s infinite}
-.resident:hover .fish-portrait .fish{filter:drop-shadow(0 5px 6px #183a5250)}
-.resident:hover .portrait-reef{transform:scale(1.035);filter:saturate(1) brightness(1.06)}
-.resident-more{transition:background .2s,border-color .2s,color .2s,transform .2s}
-.resident-more:hover{transform:translateX(2px)}
-.resident-detail-panel{background:linear-gradient(145deg,#fffefaf7,#f5fafbf2 74%,#edf7f7ef);border-color:#dcebed;box-shadow:0 14px 32px #1c4c6b24,inset 0 1px #fff}
-.feature-bubbles .bubble{animation:bubble-bob 6.8s ease-in-out infinite}
+/* Keep the controls lively, with a soft edge under the live reef. */
+.download{
+  min-height:48px;
+  padding:0 10px 0 20px;
+  gap:14px;
+  border:1px solid #12638f;
+  border-radius:12px;
+  background:linear-gradient(180deg,#2387bd,#176b9d);
+  box-shadow:0 3px 0 #0e547b,0 6px 14px #174b6820;
+  color:#fff;
+  font-size:13px;
+  font-weight:650;
+  transition:background .16s,transform .16s,box-shadow .16s;
+}
+.download:hover{
+  background:linear-gradient(180deg,#2d94ca,#1a75a8);
+  transform:translateY(-1px);
+  box-shadow:0 4px 0 #0e547b,0 8px 16px #174b6824;
+}
+.download:active{transform:translateY(1px);box-shadow:0 1px 0 #0e547b,0 3px 8px #174b681c}
+.download .download-mark{
+  display:grid;
+  width:29px;
+  height:29px;
+  place-items:center;
+  border-left:1px solid #ffffff55;
+  padding-left:11px;
+  font-size:19px;
+  line-height:1;
+  font-weight:400;
+}
+.aquarium{
+  border-radius:36px;
+  box-shadow:0 15px 35px -25px #153c5066,0 4px 12px -9px #21677c2c;
+}
+.reef-atmosphere{
+  inset:34% 3% 0;
+  width:94%;
+  height:65%;
+  border-radius:48px;
+  clip-path:inset(0 round 48px);
+  filter:blur(16px);
+  opacity:.17;
+}
+.preview-wrap::after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  left:12%;
+  right:12%;
+  bottom:3px;
+  height:20px;
+  border-radius:50%;
+  background:#24465628;
+  filter:blur(20px);
+  pointer-events:none;
+}
+.feature-bubbles .bubble{animation:easy-float 7s ease-in-out infinite}
 .feature-bubbles>div:nth-child(2) .bubble{animation-delay:-2.2s}
-.feature-bubbles>div:nth-child(3) .bubble{animation-delay:-4.1s}
-.feature-bubbles .bubble img{opacity:.86;filter:drop-shadow(0 8px 14px #5b849014);transition:transform .45s ease,filter .45s ease}
-.feature-bubbles>div:hover .bubble img{transform:scale(1.035);filter:drop-shadow(0 11px 16px #5b84901f)}
-.feature-bubbles .bubble span{transition:transform .3s ease}
-.feature-bubbles>div:hover .bubble span{transform:translateY(-2px)}
-.feature-bubbles h3{color:#334b59}
-.feature-bubbles p{color:#657b88}
-.closing{background:linear-gradient(120deg,#eef6f8,#f5f8fb 52%,#edf5f7);border-color:#e3ecee;box-shadow:0 12px 36px #31576d0a}
-.closing .eyebrow{color:#56788a}
-.closing-fish{animation:closing-swim 8.4s ease-in-out infinite}
-.footer-compact{border-color:#e9eff0}
-.footer-brand,.footer-links a,.footer-links button,.footer-legal button{transition:color .2s ease}
-@keyframes headline-arrive{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fish-drift-a{0%,100%{transform:translate3d(0,0,0) rotate(-1deg)}50%{transform:translate3d(-4px,-7px,0) rotate(1deg)}}
-@keyframes fish-drift-b{0%,100%{transform:translate3d(0,0,0) rotate(-21deg)}50%{transform:translate3d(5px,-5px,0) rotate(-18deg)}}
-@keyframes fish-drift-c{0%,100%{transform:translate3d(0,0,0) rotate(8deg)}50%{transform:translate3d(-5px,-6px,0) rotate(5deg)}}
-@keyframes resident-drift-one{0%,100%{transform:translateX(-2px) rotate(-1deg)}50%{transform:translateX(3px) rotate(1deg)}}
-@keyframes resident-drift-two{0%,100%{transform:translateX(2px) rotate(1deg)}50%{transform:translateX(-3px) rotate(-1deg)}}
-@keyframes resident-drift-three{0%,100%{transform:translateX(-3px) rotate(1deg)}50%{transform:translateX(2px) rotate(-1deg)}}
-@keyframes bubble-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-@keyframes closing-swim{0%,100%{translate:0 0;rotate:-28deg}50%{translate:7px -6px;rotate:-26deg}}
-@media(max-width:760px){.resident:hover{transform:translateY(-2px)}.feature-bubbles>div:hover .bubble img{transform:none}}
-@media(prefers-reduced-motion:reduce){.hero h1,.hero-goldfish,.hero-clown,.hero-angel,.resident-grid .resident .fish-portrait .fish,.feature-bubbles .bubble,.closing-fish{animation:none!important}.feature-bubbles .bubble img,.feature-bubbles .bubble span,.download svg{transition:none}}
+.feature-bubbles>div:nth-child(3) .bubble{animation-delay:-4.4s}
+@keyframes easy-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@media(max-width:760px){.aquarium{border-radius:29px}.reef-atmosphere{border-radius:38px;clip-path:inset(0 round 38px)}}
+@media(max-width:520px){.aquarium{border-radius:24px}.reef-atmosphere{border-radius:30px;clip-path:inset(0 round 30px)}.download{min-height:47px}}
+@media(prefers-reduced-motion:reduce){.feature-bubbles .bubble{animation:none!important}}
+
+.download{gap:12px;padding-left:15px;padding-right:16px}
+.download .download-fish{width:42px;height:34px;flex:none;filter:drop-shadow(0 1px 1px #12374b30)}
+.download .download-mark{
+  display:block;
+  width:auto;
+  height:auto;
+  padding:0 0 0 12px;
+  border:0;
+  border-left:1px solid #ffffff70;
+  border-radius:0;
+  background:transparent;
+  color:#fff;
+  font-size:18px;
+  font-weight:600;
+}
+.resident-grid{align-items:stretch}
+.resident{height:100%}
+.resident-copy{min-height:120px}
+.feature-bubbles .bubble span{font-size:14px;line-height:1.2}
+.feature-bubbles .bubble b{font-size:17px}
+@media(max-width:520px){.download{padding-left:12px;gap:9px}.download .download-fish{width:36px;height:29px}.resident-copy{min-height:110px}}
+
+/* Even cards, simple actions and a familiar scene picker. */
+.resident-grid{align-items:stretch}
+.resident{display:flex;height:100%;flex-direction:column}
+.fish-portrait{flex:none;aspect-ratio:1.85}
+.resident-copy{display:flex;flex:1;flex-direction:column;align-items:flex-start}
+.resident-more{
+  margin-top:auto;
+  padding:9px 12px;
+  border:1px solid #d8e9f0;
+  border-radius:10px;
+  background:#f2f8fb;
+  color:#236482;
+  font-size:12px;
+  font-weight:700;
+  transition:background .14s,border-color .14s,color .14s;
+}
+.resident-more:hover{background:#eaf4f8;border-color:#c9e0e9;color:#174e68}
+.resident-more span{font-size:16px}
+.scene-picker{
+  gap:2px;
+  padding:4px;
+  border:1px solid #e1eaf0;
+  border-radius:999px;
+  background:#f3f7f9;
+}
+.scene-picker button{padding:8px 12px;border-radius:999px}
+.scene-picker button[aria-pressed=true]{background:#fff;box-shadow:0 1px 3px #183b4b12}
+.download{
+  min-height:48px;
+  padding:0 17px 0 20px;
+  gap:13px;
+  border:1px solid #126e9d;
+  border-radius:14px;
+  background:#1678a8;
+  box-shadow:0 2px 5px #164e6718;
+  transition:background .14s,border-color .14s;
+}
+.download:hover,.download:active{background:#126b97;border-color:#105f87;transform:none;box-shadow:0 2px 5px #164e6718}
+.download .download-mark{
+  display:block;
+  width:auto;
+  height:auto;
+  padding:0 0 0 12px;
+  border:0;
+  border-left:1px solid #ffffff6b;
+  border-radius:0;
+  background:transparent;
+  color:#fff;
+  font-family:system-ui,sans-serif;
+  font-size:18px;
+  font-weight:500;
+}
+.feature-bubbles h3{min-height:2.4em}
+.feature-bubbles .bubble span{font-size:15px}
+.feature-bubbles .bubble b{font-size:20px}
+.feature-bubbles>div{display:flex;flex-direction:column;align-items:center}
+@media(max-width:760px){.resident-grid{align-items:stretch}.resident-more{font-size:11px}.scene-picker button{padding:7px 9px}}
+@media(max-width:520px){.resident-grid{grid-template-columns:1fr}.resident{width:100%}.fish-portrait{aspect-ratio:2.05}.resident-copy{padding:15px 12px}.resident-more{margin-top:12px}.feature-bubbles h3{min-height:0}.scene-picker{gap:0}.scene-picker button{padding:7px 7px;font-size:9px}}
+
+/* Bring the controls and type closer to the playful aquarium artwork. */
+.hero h1,.story h2,.section-heading h2,.resident h3,.closing h2,.modal h2,.bubble span{
+  font-family:ui-rounded,"SF Pro Rounded","Arial Rounded MT Bold",system-ui,sans-serif;
+  font-weight:800;
+  letter-spacing:-.035em;
+}
+.story{
+  max-width:850px;
+  margin:42px auto 0;
+  padding:10px 22px 0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+}
+.story .eyebrow{display:none}
+.story h2{font-size:34px;margin:0 0 10px;color:#17344a}
+.story p{
+  max-width:760px;
+  color:#496a7c;
+  font-family:ui-rounded,"SF Pro Rounded","Arial Rounded MT Bold",system-ui,sans-serif;
+  font-size:16px;
+  font-weight:600;
+  line-height:1.65;
+}
+.scene-picker{
+  gap:21px;
+  padding:3px 0;
+  border:0;
+  background:transparent;
+}
+.scene-picker button{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:8px 2px;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  color:#718391;
+  font-size:11px;
+  font-weight:600;
+  transition:color .15s;
+}
+.scene-picker button::before{
+  content:"";
+  width:8px;
+  height:8px;
+  flex:none;
+  border-radius:50%;
+  background:#42b6cc;
+}
+.scene-picker button:nth-child(2)::before{background:#f3bd69}
+.scene-picker button:nth-child(3)::before{background:#477eb8}
+.scene-picker button:hover{background:transparent;color:#275d78;transform:none}
+.scene-picker button[aria-pressed=true]{
+  background:transparent;
+  color:#173c53;
+  font-weight:750;
+  box-shadow:none;
+}
+.download{
+  min-height:52px;
+  padding:5px 7px 5px 21px;
+  gap:13px;
+  border:1px solid #086cc9;
+  border-radius:999px;
+  background:#0874df;
+  box-shadow:0 3px 9px #075c9228;
+  font-family:ui-rounded,"SF Pro Rounded","Arial Rounded MT Bold",system-ui,sans-serif;
+  font-size:14px;
+  font-weight:750;
+  transition:background .16s,box-shadow .16s;
+}
+.download:hover,.download:active{
+  background:#0868c5;
+  transform:none;
+  box-shadow:0 3px 9px #075c9228;
+}
+.download .download-mark{
+  width:38px;
+  height:38px;
+  padding:0;
+  border:0;
+  border-radius:50%;
+  background:#ffffffeb;
+  color:#0874df;
+  font-family:system-ui,sans-serif;
+  font-size:20px;
+  font-weight:700;
+}
+.feature-bubbles .bubble{animation:none}
+.feature-bubbles .bubble img{opacity:.95}
+.feature-bubbles>div:hover .bubble img,.feature-bubbles>div:hover .bubble span{transform:none;filter:none}
+.feature-bubbles .bubble span{font-size:15px;line-height:1.2;color:#17344a}
+.feature-bubbles .bubble b{font-size:19px}
+.feature-bubbles h3{font-family:ui-rounded,"SF Pro Rounded","Arial Rounded MT Bold",system-ui,sans-serif;font-weight:750}
+.resident:hover{transform:none;box-shadow:0 2px 9px #19384a08}
+.wordmark:hover .brand-icon{rotate:-5deg;translate:0 0}
+.footer .socials button:hover,.footer .socials a:hover{transform:none;box-shadow:none}
+.detail-close:hover,.modal-contact:hover{transform:none}
+@media(max-width:760px){.story{margin-top:31px;padding:6px 14px 0}.story h2{font-size:29px}.story p{font-size:14px}.scene-picker{gap:13px}}
+@media(max-width:520px){.story{margin-top:26px;padding-left:4px;padding-right:4px}.story h2{font-size:25px}.story p{font-size:13px}.scene-picker{gap:9px}.scene-picker button{gap:5px;font-size:9px}.scene-picker button::before{width:7px;height:7px}.download{min-height:49px}}
+@media(prefers-reduced-motion:reduce){.feature-bubbles .bubble{animation:none!important}}
+
+.download{gap:12px;padding-left:15px;padding-right:16px}
+.download .download-fish{width:42px;height:34px;flex:none;filter:drop-shadow(0 1px 1px #12374b30)}
+.hero-copy .download .download-mark,.closing .download .download-mark{
+  display:block;width:auto;height:auto;padding:0 0 0 12px;border:0;border-left:1px solid #ffffff70;
+  border-radius:0;background:transparent;color:#fff;font-size:18px;font-weight:600;
+}
+.resident-grid{align-items:stretch}
+.resident{height:100%}
+.resident-copy{min-height:120px}
+.feature-bubbles .bubble span{font-size:14px;line-height:1.2}
+.feature-bubbles .bubble b{font-size:17px}
+@media(max-width:520px){.download{padding-left:12px;gap:9px}.download .download-fish{width:36px;height:29px}.resident-copy{min-height:110px}}
+
+/* Small brand motion and bubble depth without covering any copy. */
+.wordmark{transition:transform .22s ease}
+.wordmark:hover,.wordmark:focus-visible{transform:translateY(-3px)}
+.wordmark:hover .brand-icon,.wordmark:focus-visible .brand-icon{rotate:0deg;translate:0 -1px}
+.bubble{isolation:isolate}
+.feature-bubbles .bubble>img:first-child{z-index:0}
+.feature-bubbles .bubble>span{z-index:2}
+.feature-bubbles .bubble .bubble-layer{
+  position:absolute;
+  inset:auto;
+  object-fit:contain;
+  pointer-events:none;
+}
+.feature-bubbles .bubble .bubble-layer-back{
+  z-index:1;
+  left:17%;
+  top:24%;
+  width:21px;
+  height:21px;
+  opacity:.46;
+}
+.feature-bubbles .bubble .bubble-layer-front{
+  z-index:3;
+  right:19%;
+  bottom:22%;
+  width:13px;
+  height:13px;
+  opacity:.58;
+}
+.resident{isolation:isolate}
+.resident:first-child::after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  right:23%;
+  bottom:-9px;
+  width:19px;
+  height:19px;
+  border:1px solid #8ddae766;
+  border-radius:50%;
+  background:radial-gradient(circle at 34% 30%,#ffffffc7,#dbf6fb70 58%,#a8e0eb22);
+  box-shadow:inset 1px 1px 3px #fff9;
+  pointer-events:none;
+}
+@media(prefers-reduced-motion:reduce){.wordmark,.brand-icon{transition:none!important}}
+@media(max-width:520px){.hero h1{font-size:clamp(30px,8.8vw,36px);letter-spacing:-1.5px;line-height:1.08}}
+
+/* The title, bubble facts and closing fish respond clearly to the pointer. */
+.hero h1{transform-origin:center;transition:transform .2s ease,text-shadow .2s ease}
+.hero h1:hover,.hero h1:focus-visible{transform:translateY(-4px);text-shadow:0 7px 18px #2360831c}
+.hero h1>.blue{display:inline-block;transition:transform .2s ease}
+.hero h1:hover>.blue,.hero h1:focus-visible>.blue{transform:translateY(-3px)}
+.hero h1 .fish-y .fish{transition:filter .2s ease;}
+.hero h1:hover .fish-y .fish,.hero h1:focus-visible .fish-y .fish{
+  transform:translate(-50%,calc(-50% - 7px)) rotate(90deg);
+  filter:drop-shadow(0 6px 4px #17344445);
+}
+.feature-bubbles .bubble{transition:transform .22s ease,filter .22s ease}
+.feature-bubbles>div:hover .bubble,.feature-bubbles>div:focus-within .bubble{
+  transform:translateY(-6px);
+  filter:drop-shadow(0 9px 10px #42798930);
+}
+.feature-bubbles>div:hover .bubble .bubble-layer-back,.feature-bubbles>div:focus-within .bubble .bubble-layer-back{transform:translate(-3px,-3px) scale(1.12)}
+.feature-bubbles>div:hover .bubble .bubble-layer-front,.feature-bubbles>div:focus-within .bubble .bubble-layer-front{transform:translate(3px,-4px) scale(1.16)}
+.feature-bubbles .bubble .bubble-layer{transition:transform .22s ease}
+.closing-fish{pointer-events:auto;cursor:default;transition:transform .24s ease,filter .24s ease}
+.closing-fish:hover{transform:translate(9px,-8px) scale(1.06);filter:drop-shadow(0 8px 7px #17455b40)}
+@media(prefers-reduced-motion:reduce){.hero h1,.hero h1>.blue,.hero h1 .fish-y .fish,.feature-bubbles .bubble,.feature-bubbles .bubble .bubble-layer,.closing-fish{transition:none!important}}
+
+/* Keep the hero lettering still; only Ocean and its little fish rise together. */
+.hero h1{transform:none;text-shadow:none;transition:none}
+.hero h1>.blue{display:inline-block;transition:transform 1.25s cubic-bezier(.4,0,.2,1)}
+.hero h1 .fish-y .fish{transition:transform 1.4s cubic-bezier(.4,0,.2,1) .1s,filter 1.1s ease .1s}
+.hero h1 .fish-y .fish,
+.hero h1:hover .fish-y .fish{
+  transform:translate(-50%,-50%) rotate(90deg);
+  filter:drop-shadow(0 2px 1px #17344425);
+}
+.hero h1[data-ocean-hover="true"]>.blue{transform:translateY(-2px) scale(1.005)}
+.hero h1[data-ocean-hover="true"] .fish-y .fish{
+  transform:translate(-50%,calc(-50% - 3px)) rotate(90deg);
+  filter:drop-shadow(0 4px 3px #17344435);
+}
+
+/* Softer pacing: longer ease-outs and a slight stagger keep reactions calm. */
+.hero h1>.blue{transition:transform 1.25s cubic-bezier(.4,0,.2,1)}
+.hero h1 .fish-y .fish{transition:transform 1.4s cubic-bezier(.4,0,.2,1) .1s,filter 1.1s ease .1s}
+.hero-goldfish{animation-duration:7.4s}
+.hero-clown{animation-duration:6.2s;animation-delay:-2.3s}
+.hero-angel{animation-duration:8.1s}
+.wordmark,.brand-icon{transition-duration:.38s}
+.download,.download span,.scene-picker button{transition-duration:.32s}
+.resident{transition-duration:.42s}
+.fish-portrait .fish{transition:transform .55s cubic-bezier(.22,1,.36,1),filter .42s ease}
+.portrait-reef{transition:transform .7s cubic-bezier(.22,1,.36,1)}
+.feature-bubbles>div:nth-child(1) .bubble{transition-delay:0s}
+.feature-bubbles>div:nth-child(2) .bubble{transition-delay:.07s}
+.feature-bubbles>div:nth-child(3) .bubble{transition-delay:.14s}
+.feature-bubbles .bubble{transition:transform .46s cubic-bezier(.22,1,.36,1),filter .4s ease}
+.feature-bubbles .bubble .bubble-layer{transition:transform .48s cubic-bezier(.22,1,.36,1)}
+.closing-fish{transition:transform .5s cubic-bezier(.22,1,.36,1),filter .42s ease}
+.footer-links a,.footer-links button,.footer-legal button,.topbar nav a,.pause{transition-duration:.3s}
+
+/* Slower, softer interaction timing plus a restrained reveal on scroll. */
+.hero h1>.blue{transition:transform 1.25s cubic-bezier(.4,0,.2,1)}
+.hero h1 .fish-y .fish{transition:transform 1.4s cubic-bezier(.4,0,.2,1) .1s,filter 1.1s ease .1s}
+.wordmark,.brand-icon{transition-duration:.52s}
+.download,.download span,.scene-picker button{transition-duration:.48s}
+.feature-bubbles .bubble{transition:transform .62s cubic-bezier(.2,.85,.25,1),filter .55s ease}
+.feature-bubbles>div:nth-child(1) .bubble{transition-delay:0s}
+.feature-bubbles>div:nth-child(2) .bubble{transition-delay:.1s}
+.feature-bubbles>div:nth-child(3) .bubble{transition-delay:.2s}
+.feature-bubbles .bubble .bubble-layer{transition:transform .68s cubic-bezier(.2,.85,.25,1)}
+.closing-fish{transition:transform .72s cubic-bezier(.2,.85,.25,1),filter .62s ease}
+.resident{transition-duration:.55s}
+.fish-portrait .fish{transition:transform .68s cubic-bezier(.2,.85,.25,1),filter .55s ease}
+.portrait-reef{transition:transform .8s cubic-bezier(.2,.85,.25,1)}
+.reveal{transform:translateY(17px);filter:blur(3px);scale:.99;transition:opacity .95s ease var(--delay,0s),transform .95s cubic-bezier(.2,.85,.25,1) var(--delay,0s),filter .95s ease var(--delay,0s),scale .95s cubic-bezier(.2,.85,.25,1) var(--delay,0s)}
+.reveal[data-visible="true"]{filter:blur(0);scale:1}
+.features:not([data-visible="true"]) .feature-bubbles>div{opacity:0;translate:0 14px;filter:blur(3px)}
+.features[data-visible="true"] .feature-bubbles>div{opacity:1;translate:0 0;filter:blur(0)}
+.feature-bubbles>div{transition:opacity .8s ease,translate .9s cubic-bezier(.2,.85,.25,1),filter .8s ease}
+.features[data-visible="true"] .feature-bubbles>div:nth-child(1){transition-delay:.08s}
+.features[data-visible="true"] .feature-bubbles>div:nth-child(2){transition-delay:.2s}
+.features[data-visible="true"] .feature-bubbles>div:nth-child(3){transition-delay:.32s}
+.wordmark{animation:brand-arrive .75s cubic-bezier(.2,.85,.25,1) both}
+.hero h1{animation:title-arrive .95s .08s cubic-bezier(.2,.85,.25,1) both}
+.hero h1>.blue{animation:title-word-arrive .7s .22s ease both}
+.hero h1 .fish-y .fish{animation:title-fish-arrive .65s .32s ease backwards}
+@keyframes brand-arrive{from{opacity:0;translate:0 7px}to{opacity:1;translate:0 0}}
+@keyframes title-arrive{from{opacity:0;translate:0 16px;filter:blur(4px)}to{opacity:1;translate:0 0;filter:blur(0)}}
+@keyframes title-word-arrive{from{opacity:0;filter:blur(5px)}to{opacity:1;filter:blur(0)}}
+@keyframes title-fish-arrive{from{opacity:0;filter:blur(4px)}to{opacity:1;filter:drop-shadow(0 2px 1px #17344425)}}
+@media(prefers-reduced-motion:reduce){
+  .reveal,.features .feature-bubbles>div{opacity:1!important;transform:none!important;translate:none!important;filter:none!important;scale:1!important}
+  .wordmark,.hero h1,.hero h1>.blue,.hero h1 .fish-y .fish{animation:none!important}
+}
+
+/* Make the preview controls comfortable to use without making them look larger. */
+.topbar nav a{display:inline-flex;align-items:center;min-height:40px}
+.scene-picker button,.pause{min-height:38px}
+.scene-picker button{padding-inline:14px}
+@media(max-width:520px){.scene-picker button{min-height:36px;padding-inline:9px}.pause{min-height:36px}}

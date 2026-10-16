@@ -33,8 +33,8 @@ export function stepFish(fish,dt,time,pointer={active:false}){
   let wantedX=dx/distance*speed,wantedY=dy/distance*speed*.62;
   if(distance<.035&&!f.curious){f.nextDecision=Math.min(f.nextDecision,time+.3);wantedX*=.3;wantedY*=.3}
   // Local separation: fish do not queue behind one shared destination.
-  for(let i=0;i<positions.length;i++){if(i===f.id)continue;const other=positions[i];const sx=f.x-other.x,sy=(f.y-other.y)*.65;const gap=Math.hypot(sx,sy);const room=.12+.025*f.depth;
-   if(gap>0&&gap<room){const force=(room-gap)/room*.12;wantedX+=sx/gap*force;wantedY+=sy/gap*force;}
+  for(let i=0;i<positions.length;i++){if(i===f.id)continue;const other=positions[i];const sx=f.x-other.x,sy=(f.y-other.y)*.65;const gap=Math.hypot(sx,sy);const room=.2+.025*f.depth;
+   if(gap>0&&gap<room){const force=(room-gap)/room*.5;wantedX+=sx/gap*force;wantedY+=sy/gap*force;}
   }
   if(f.x<.065)wantedX+=.045;if(f.x>.935)wantedX-=.045;if(f.y<.16)wantedY+=.035;if(f.y>.84)wantedY-=.035;
   const ease=1-Math.exp(-dt*(f.mode==='dart'?2.7:1.35));
